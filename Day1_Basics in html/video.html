@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video tag in html</title>
+</head>
+<body>
+    <!-- mp4, webM and ogg -->
+    <video src="video1.mp4" width="300px" controls loop autoplay muted></video>
+    <!-- controls, loop, autoplay, muted are boolean attributes -->
+    <video width="300px">
+        <source src="video1.mp4">
+        <source src="video1.webM">
+        <source src="video1.ogg">
+        <!-- can link multiple sources if any one doesnt work. -->
+    </video>
+</body>
+</html>
