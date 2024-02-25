@@ -1,4 +1,4 @@
-# Sigma-Course-Daily-Code-Journey
+# Sigma2.0-Course-Daily-Code-Journey
 
 Description:
 Welcome to my daily code journey as I progress through the Sigma course! This repository is dedicated to documenting my learning process and sharing the code I write each day as part of the course. Expect to find a variety of topics covered, including Java language, front-end development, Algorithms and Data Structures (DSA) and MERN stack development.
