@@ -1,0 +1,64 @@
+*{                                      /* universal selector */
+    font-family: 'Courier New';
+}
+
+h1, h3{                                 /*element selector*/
+    color: #b92b27;
+}
+
+#login{
+    background-color: white;
+}
+#signup{                                /* id selector */
+    background-color: #b92b27;
+    color: white;
+}
+
+.upvote{                                /*class selector*/
+    background-color: green;
+    color: white;
+}
+
+.post a{                           /* descendant selector */
+    color: purple;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav a{        /*descendant selector doesnt check 'direct child' or not */
+    color: pink;
+}
+
+p+h3{                             /*sibling combinator*/
+    text-decoration: underline;
+}
+
+.upvote+button{
+    background-color: cornflowerblue;
+    color: darkblue;
+}
+
+div>input{                 /* child combinator check for a direct child */
+    background-color: darkgray;
+}
+
+input[type="text"]{         /*Attribute selctor*/
+    color: azure;
+}
+
+input[type="password"]{
+    color:chocolate;
+}
+
+    /* Pseudo class  */
+button:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+button:active{
+    background-color: cadetblue;
+}
+
