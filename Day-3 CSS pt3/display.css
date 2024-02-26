@@ -1,0 +1,19 @@
+span{
+   /* background-color: lime;  */
+   border: 2px solid black;
+   height: 100px;
+   width: 200px;    /* height width doesnt apply to inline element */
+   padding: 50px;  /* padding overlaps on left and right only (not on top and bottom)*/
+   margin:30px;    /* margin too applies only on left and right */
+}
+
+div{
+    display: inline-block; 
+    /* acts as a inline element but style applies according to block element */
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;     
+    margin:5px;
+    background-color: greenyellow;
+   /* whereas everything applies to a div element */
+} 
