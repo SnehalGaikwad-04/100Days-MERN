@@ -1,0 +1,37 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    text-align: center;
+    border: 3px solid black;
+    margin: 20px;
+    display: inline-block;
+}
+
+#static{
+    background-color: yellow;
+    position: static;
+    top: 100px;       /* if position is static other properties wont apply */
+    bottom: 100px;
+}
+
+#relative{
+    background-color: yellow;
+    position: relative;         /* moves from x and y starting from current position */
+    top: 100px;       
+    bottom: 100px;
+}
+
+#absolute{
+    background-color: yellow;
+    position: absolute;         /* moves from x and y starting from current position */
+    top: 300px;       
+    bottom: 300px;
+}
+
+#fixed{
+    background-color: yellow;
+    position: fixed;
+    top: 200px;       
+    bottom: 200px;
+}
