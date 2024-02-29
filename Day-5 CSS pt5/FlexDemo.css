@@ -1,0 +1,46 @@
+#container1,
+#container2,
+#container3 {
+    height: 300px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#row{
+    height: 300px;
+    display: flex;
+    border: 2px solid black;
+    background-color: azure;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container1 {
+    justify-content: space-between;
+}
+
+#container2 {
+    justify-content: space-around;
+}
+
+#container3 {
+    justify-content: space-evenly;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container1 div,
+#container2 div,
+#container3 div {
+    height: 100px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    font-size: 2;
+    box-shadow: 2px 2px 8px black;
+}
