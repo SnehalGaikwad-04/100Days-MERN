@@ -1,0 +1,20 @@
+justify-content: This property defines how flex items are aligned along the main axis of the flex container. The main axis is determined by the flex-direction property. */
+justify-content has several possible values:
+
+flex-start: Items are packed toward the start of the main axis.
+flex-end: Items are packed toward the end of the main axis.
+center: Items are centered along the main axis.
+space-between: Items are evenly distributed along the main axis with the first item at the start and the last item at the end.
+space-around: Items are evenly distributed along the main axis with equal space around them.
+space-evenly: Items are evenly distributed along the main axis with equal space around them, including before the first item and after the last item.
+
+
+
+align-content has similar values to justify-content, but they apply to the cross axis:
+
+flex-start: Lines are packed toward the start of the cross axis.
+flex-end: Lines are packed toward the end of the cross axis.
+center: Lines are centered along the cross axis.
+space-between: Lines are evenly distributed along the cross axis with the first line at the start and the last line at the end.
+space-around: Lines are evenly distributed along the cross axis with equal space around them.
+stretch: Lines stretch to fill the remaining space along the cross axis.
