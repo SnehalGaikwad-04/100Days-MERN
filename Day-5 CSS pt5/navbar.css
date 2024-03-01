@@ -1,0 +1,19 @@
+nav{
+    height: 50px;
+    width: 900px;
+    border: 2px solid lightseagreen;
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+div{
+    height: 50px;
+    width: 80px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+}
