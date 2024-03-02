@@ -1,0 +1,26 @@
+.box{
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+
+    animation-name: colorAnimate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    /* animation: fontAnimate 2s ease-in 0s infinite normal;  Short Hand */
+}
+
+@keyframes fontAnimation {
+    from{font-size: 20px;}
+    to{font-size: 40px;}    
+}
+
+@keyframes colorAnimate {
+    from{background-color: green;}
+    to{background-color: blue;}
+}
+
+/*also can use 0% for 'from' 50% for middle and 100% for 'to' attribute*/
