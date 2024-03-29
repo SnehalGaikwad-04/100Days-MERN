@@ -9,9 +9,9 @@ console.log(sum);
 let avg = sum / square.length; 
 console.log(avg);
 
-//create a new array using map function, whose each elements value equals to the original el plus 5
+//create a new array using map function, whose each elements value equals to the original el plus 4
 let arr = [1,2];
-let newArray = arr.map((arg) => arg+5);
+let newArray = arr.map((arg) => arg+4);
 console.log(newArray); 
 
 //Create a new array whose elements are in uppercase of words present in the original array.
