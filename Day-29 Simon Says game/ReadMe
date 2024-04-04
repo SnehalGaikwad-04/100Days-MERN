@@ -1,0 +1,10 @@
+Welcome to the Simon Says game! This project is a digital implementation of the classic Simon Says electronic game, developed using HTML, CSS, and JavaScript.
+
+How to Play
+1. Game Rules: The game follows the original rules of Simon Says. A white flash indicates the game's signal, and a black flash occurs when the user clicks the button.
+2. Game Sequence: The sequence of button flashes is stored in an array and displayed in the console on the right side of the game screen.
+3. Game Over: If the user enters the wrong sequence, the game ends, and the final score is displayed.
+
+How to Run
+To play the game, simply hit any key on your keyboard and continue the game by mouse clicks.
+once game ended the process can be repeated.
