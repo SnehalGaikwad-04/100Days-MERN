@@ -1,0 +1,73 @@
+Below are examples demonstrating various terminal commands in Git Bash, including basic commands (`ls`, `pwd`, `clear`), directory
+/file manipulation commands (`mkdir`, `rmdir`, `rm`, `touch`), and usage of command flags.
+
+Basic Commands
+
+1. `ls` - List Files and Directories
+
+   To list the contents of the current directory:
+   ls
+
+   To list contents including hidden files:
+   ls -a
+
+2. `pwd` - Print Working Directory
+
+   To display the current working directory:
+   pwd
+
+3. `clear` - Clear the Terminal Screen
+
+   To clear the terminal screen:
+   clear
+
+
+
+Directory and File Manipulation
+
+4. `mkdir` - Create a New Directory
+
+   To create a new directory named `my_directory`:
+   mkdir my_directory
+
+5. `rmdir` - Remove an Empty Directory
+
+   To remove an empty directory named `my_directory`:
+   rmdir my_directory
+
+6. `rm` - Remove Files or Directories
+
+   To remove a file named `myfile.txt`:
+   rm myfile.txt
+
+   To remove a directory and its contents recursively:
+   rm -r my_directory
+
+
+
+Creating and Modifying Files
+
+7. `touch` - Create an Empty File
+
+   To create a new empty file named `newfile.txt`:
+   touch newfile.txt
+
+
+
+Command Flags (Options)
+
+- `ls` Flags:
+
+  - `-l`: Long listing format (displays detailed information).
+  - `-a`: List all entries including hidden files.
+
+  Example:
+  ls -la
+
+- `rm` Flags:
+
+  - `-r`: Recursive removal (for removing directories and their contents).
+  - `-f`: Force removal (suppresses error messages and prompts).
+
+  Example:
+  rm -rf directory_to_delete
