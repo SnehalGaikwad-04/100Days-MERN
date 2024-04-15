@@ -22,3 +22,7 @@ app.get("/search" ,(req,res) => {
 app.get("/demo" ,(req,res) => {
     res.send('you reached the demo page');
 });
+
+app.get("*" ,(req,res) => {
+    res.send('this is the wildcard page where you u r directed, if the user requests anything other the above requests');
+});
