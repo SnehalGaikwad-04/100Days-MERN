@@ -1,30 +1,29 @@
-const {faker} = require("@faker-js/faker");
+const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'sigma_app',
-    password: 'snehal',
+    host:'localhost',
+    user:'root',
+    database:'sigma_app',
+    password:'snehal'
 });
 
 try{
-    connection.query('show tables', (err, result)=> {
+    connection.query('SHOW TABLES',(err, res) => {
         if(err) throw err;
-        console.log(result);
+        console.log(res);
     });
-} catch(err){
-    console.log('Error :'+err);
+}catch(err){
+    console.log(err);
 }
-
 connection.end();
-
+ 
 let getrandomuser = () => {
     return{
-        id: faker.datatype.uuid(),
-        username: faker.internet.username,
-        email: faker.internet.email,
-        password: faker.internet.password,
+        id: faker.string.uuid(),
+        username: faker.internet.userName(),
+        email: faker.internet.email(),
+        password: faker.internet.password(),
     };
 };
 
