@@ -1,0 +1,10 @@
+MongoDB Server Download  : https://www.mongodb.com/try/download/community
+Mongosh (shell) Download : https://www.mongodb.com/try/download/shell
+
+Personal Computer Paths
+-----------------------------------------------------------------------------------
+MongoDB shell extraction = 
+C:\Users\Snehal\Downloads\MySQL\mongosh-2.2.6-win32-x64
+
+bin path =
+C:\Users\Snehal\Downloads\MySQL\mongosh-2.2.6-win32-x64\mongosh-2.2.6-win32-x64\bin
