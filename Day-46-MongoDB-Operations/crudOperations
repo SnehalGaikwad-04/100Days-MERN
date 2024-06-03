@@ -149,4 +149,138 @@ college> db.student.find({$or: [{marks: {$gt: 90}},{name: "bob"}] })
     marks: 98
   }
 ]
+college> db.student.updateOne( {name: "adam"}, {$set: {marks: 99}} )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.student.updateMany( {marks: 88}, {$set: {city: "Mumbai"}} )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Mumbai',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf9'),
+    name: 'david',
+    age: 30,
+    salary: 90000
+  }
+]
+college> db.student.replaceOne( {name: "David"}, {name:"Darren", age: 40, marks: 88} )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Mumbai',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf9'),
+    name: 'david',
+    age: 30,
+    salary: 90000
+  }
+]
+college> db.student.insertOne( {name: "farah", performance: {marks: 88, grade: "A"}} )
+{
+  acknowledged: true,
+  insertedId: ObjectId('665db0ff9ef1d79216cdcdfa')
+}
+college> db.student.find({marks:88})
+[
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Mumbai',
+    marks: 88
+  }
+]
+college> db.student.find({"performance.marks":88})
+[
+  {
+    _id: ObjectId('665db0ff9ef1d79216cdcdfa'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 99
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Mumbai',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf9'),
+    name: 'david',
+    age: 30,
+    salary: 90000
+  },
+  {
+    _id: ObjectId('665db0ff9ef1d79216cdcdfa'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+college> db.student.deleteOne({name:"caleb"})
+{ acknowledged: true, deletedCount: 1 }
 college>
