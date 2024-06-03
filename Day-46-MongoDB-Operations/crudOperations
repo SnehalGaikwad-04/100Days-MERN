@@ -1,0 +1,152 @@
+test> db
+test
+test> use college
+switched to db college
+college> show collections
+
+college> db.student.insertOne({ name: "adam", age: 19, marks:88 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('665da0ae9ef1d79216cdcdf6')
+}
+college> db.student.insertOne({ name: "bob", city: "Delhi", marks:88 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('665da3959ef1d79216cdcdf7')
+}
+college> show collections
+student
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  }
+]
+college> db.student.insertMany({ name: "caleb", city: "New York", marks:98 }, {name: "david", age: 30, salary:90000})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+college> db.student.insertMany([ { name: "caleb", city: "New York", marks:98 }, {name: "david", age: 30, salary:90000} ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('665da4bf9ef1d79216cdcdf8'),
+    '1': ObjectId('665da4bf9ef1d79216cdcdf9')
+  }
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf9'),
+    name: 'david',
+    age: 30,
+    salary: 90000
+  }
+]
+college> db.student.find({name:"adam"})
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+college>
+
+college> db.student.find({marks : 88})
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  }
+]
+college> db.student.findOne({marks : 88})
+{
+  _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+  name: 'adam',
+  age: 19,
+  marks: 88
+}
+college> db.student.find({marks : 88, age: {$gt: 18}})
+[
+  {
+    _id: ObjectId('665da0ae9ef1d79216cdcdf6'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+college> db.student.find({city: {$in: ["Delhi", "NewYork"]}})
+[
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  }
+]
+college> db.student.find({city: {$in: ["Delhi", "New York"]}})
+[
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  }
+]
+college> db.student.find({$or: [{marks: {$gt: 90}},{name: "bob"}] })
+[
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Delhi',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf8'),
+    name: 'caleb',
+    city: 'New York',
+    marks: 98
+  }
+]
+college>
