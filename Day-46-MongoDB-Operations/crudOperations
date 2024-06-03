@@ -283,4 +283,30 @@ college> db.student.find()
 ]
 college> db.student.deleteOne({name:"caleb"})
 { acknowledged: true, deletedCount: 1 }
-college>
+college> db.student.deleteMany({marks: {$gt: 90} })
+{ acknowledged: true, deletedCount: 1 }
+college> db.student.find()
+[
+  {
+    _id: ObjectId('665da3959ef1d79216cdcdf7'),
+    name: 'bob',
+    city: 'Mumbai',
+    marks: 88
+  },
+  {
+    _id: ObjectId('665da4bf9ef1d79216cdcdf9'),
+    name: 'david',
+    age: 30,
+    salary: 90000
+  },
+  {
+    _id: ObjectId('665db0ff9ef1d79216cdcdfa'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+college> db.student.deleteMany({})
+{ acknowledged: true, deletedCount: 3 }
+
+college> db.dropDatabase()
+{ ok: 1, dropped: 'college' }
