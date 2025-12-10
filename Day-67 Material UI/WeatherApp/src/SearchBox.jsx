@@ -1,23 +1,35 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Autocomplete from "@mui/material/Autocomplete";
 import * as React from "react";
 import "./WeatherApp.css";
 
 export default function SearchBox({ updateInfo }) {
   let [city, setCity] = React.useState("");
+  let [error, setError] = React.useState(false);
 
   const API_URl = "http://api.openweathermap.org/data/2.5/weather";
   const API_KEY = "5671a923f249cf67f186515feac0a0ee";
 
+  const initialWeatherData = {
+    city: "",
+    temp: "",
+    tempmin: "",
+    tempmax: "",
+    humidity: "",
+    pressure: "",
+    feelslike: "",
+    weather: "",
+  };
+
   let getWeather = async (city) => {
+    setError(false);
+
     let response = await fetch(
       `${API_URl}?q=${city}&limit=5&appid=${API_KEY}&units=metric`
     );
 
-    // Handle network or bad response (e.g., 404 city not found)
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error("City not found");
     }
 
     let data = await response.json();
@@ -37,19 +49,28 @@ export default function SearchBox({ updateInfo }) {
   };
 
   let handlechange = (e) => {
+    // Clear error message when the user starts typing again
+    setError(false);
     setCity(e.target.value);
   };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    setCity("");
+
+    if (!city.trim()) {
+      setError(true);
+      return;
+    }
+
     try {
       let response = await getWeather(city);
       updateInfo(response);
-      setCity("");
     } catch (err) {
-      console.error("Failed to fetch weather data:", err);
+      setError(true);
+      updateInfo(initialWeatherData);
+      console.error("Failed to fetch weather data:", err.message);
     }
+    setCity("");
   };
 
   return (
@@ -61,19 +82,15 @@ export default function SearchBox({ updateInfo }) {
           variant="outlined"
           value={city}
           onChange={handlechange}
+          error={error}
+          helperText={error ? "No such city found. Please try again." : ""}
         />
         <br />
         <br />
-        <Button
-          id="search-btn"
-          variant="contained"
-          style={{ marginLeft: "4rem" }}
-          type="submit"
-        >
+        <Button id="search-btn" variant="contained" type="submit">
           Search
         </Button>
       </form>
     </div>
   );
 }
-
