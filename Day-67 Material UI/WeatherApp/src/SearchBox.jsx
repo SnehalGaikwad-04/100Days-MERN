@@ -1,9 +1,8 @@
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 import * as React from "react";
-import InfoBox from "./InfoBox";
+import "./WeatherApp.css";
 
 export default function SearchBox({ updateInfo }) {
   let [city, setCity] = React.useState("");
@@ -54,7 +53,7 @@ export default function SearchBox({ updateInfo }) {
   };
 
   return (
-    <div>
+    <div className="searchbox">
       <form action="" onSubmit={handleSubmit}>
         <TextField
           id="city"
@@ -66,6 +65,7 @@ export default function SearchBox({ updateInfo }) {
         <br />
         <br />
         <Button
+          id="search-btn"
           variant="contained"
           style={{ marginLeft: "4rem" }}
           type="submit"
@@ -76,3 +76,4 @@ export default function SearchBox({ updateInfo }) {
     </div>
   );
 }
+
