@@ -1,0 +1,101 @@
+/* WeatherApp.css */
+
+/* Reset for Bauhaus simplicity */
+* {
+  box-sizing: border-box;
+  font-family: "Arial", "Helvetica", sans-serif; /* Use a stark sans-serif font */
+}
+
+/* Overall App Container */
+.weather-app-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0;
+  text-align: center;
+  /* Strong geometric division */
+  border: 4px solid #333; /* Thick black border */
+  background-color: #f7f7f7; /* Off-white background */
+}
+
+/* Headings: Bold and structured */
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  /* Add a yellow banner effect */
+  background-color: #ffc82a; /* Yellow primary color */
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+/* Search Box: Emphasize the container */
+.searchbox {
+  /* Simple white block */
+  background-color: #fff;
+  padding: 30px;
+  /* Remove rounded corners and soft shadows */
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 100%;
+  /* Force a structured, centered layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /* Thick black divider at the bottom */
+  border-bottom: 2px solid #333;
+}
+
+/* TextField Customization (assuming MUI is in use) */
+.MuiTextField-root {
+  width: 100%; /* Full width for blocky feel */
+  max-width: 300px;
+}
+.MuiInputBase-root {
+  border-radius: 0 !important; /* Remove rounding */
+}
+
+/* Search Button: Primary color blocks */
+#search-btn {
+  /* Blue primary color */
+  background-color: #1a5cff;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 0; /* Square button */
+  /* Red accent for focus/hover (Bauhaus primary color) */
+}
+#search-btn:hover {
+  background-color: #ff3b3b; /* Red primary color */
+}
+
+/* Info Box: Structured layout using white and black lines */
+.infobox {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 0; /* Remove rounding */
+  box-shadow: none;
+  max-width: 100%;
+  margin: 0; /* Remove margins for clean block stacking */
+  text-align: left; /* Asymmetric text alignment */
+  /* Add a stark red line for visual separation (Primary color) */
+  border-top: 5px solid #ff3b3b;
+}
+
+.infobox h2 {
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #aaa; /* Subtle line under the header */
+  padding-bottom: 5px;
+}
+
+.infobox p {
+  font-size: 1.1em;
+  color: #333;
+  margin: 8px 0;
+  padding-left: 20px; /* Indent for asymmetric look */
+}
