@@ -1,6 +1,7 @@
 import * as React from "react";
 import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
+import "./WeatherApp.css";
 
 export default function WeatherApp() {
   const [weatherData, setWeatherData] = React.useState({
@@ -26,3 +27,4 @@ export default function WeatherApp() {
     </div>
   );
 }
+
