@@ -1,9 +1,8 @@
-import * as React from "react";
 import "./WeatherApp.css";
 
 export default function InfoBox({ info }) {
   return (
-    <div>
+    <div className="infobox">
       <h2>Weather Information</h2>
       <p>Temperature: {info.temp} °C</p>
       <p>Min Temperature: {info.tempmin} °C</p>
@@ -15,4 +14,5 @@ export default function InfoBox({ info }) {
     </div>
   );
 }
+
 
