@@ -1,4 +1,6 @@
 import * as React from "react";
+import "./WeatherApp.css";
+
 export default function InfoBox({ info }) {
   return (
     <div>
@@ -13,3 +15,4 @@ export default function InfoBox({ info }) {
     </div>
   );
 }
+
